@@ -26,20 +26,20 @@ def calculate_calories():
     bmr = 10 * weight + 6.25 * height - 5 * age + 5
 
     # Calculate the total number of calories needed per day
-    total_calories = bmr * activity_level[var_activity.get()]
+    total_calories = int(bmr * activity_level[var_activity.get()])
 
     # Suggest a possible diet with that number of calories
     breakfast = int(total_calories * 0.3)
     lunch = int(total_calories * 0.4)
-    dinner = total_calories - breakfast - lunch
+    dinner = int(total_calories - breakfast - lunch)
 
     print(breakfast, lunch, dinner)
 
     # Generating meals
     breakfast_example = ""
-    if 0 <= breakfast <= 500:
+    if 0 <= breakfast <= 750:
         breakfast_example = "Овсяные хлопья, вода"
-    elif 500 <= breakfast <= 1000:
+    elif 750 <= breakfast <= 1000:
         breakfast_example = "Яичница из 2 яиц с сыром и фруктовый салат"
     elif 1000 <= breakfast <= 1500:
         breakfast_example = "Печеные яйца с беконом и овощами"
@@ -47,9 +47,9 @@ def calculate_calories():
         breakfast_example = "Кол-во ккал больше лимита"
 
     lunch_example = ""
-    if 0 <= lunch <= 500:
+    if 0 <= lunch <= 750:
         lunch_example = "Макароны с томатным соусом"
-    elif 500 <= lunch <= 1100:
+    elif 750 <= lunch <= 1100:
         lunch_example = "Тушеная курица с овощами"
     elif 1100 <= lunch <= 1700:
         lunch_example = "Куриный суп с овощами"
@@ -57,9 +57,9 @@ def calculate_calories():
         lunch_example = "Кол-во ккал больше лимита"
 
     dinner_example = ""
-    if 0 <= dinner <= 500:
+    if 0 <= dinner <= 750:
         dinner_example = "Паста с морепродуктами"
-    elif 500 <= dinner <= 1000:
+    elif 750 <= dinner <= 1000:
         dinner_example = "Стейк из тунца, овощной салат"
     elif 1000 <= dinner <= 1500:
         dinner_example = "Рис с курицей и соусом, хлеб"
