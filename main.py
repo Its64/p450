@@ -66,7 +66,7 @@ def calculate_calories():
     else:
         dinner_example = "Кол-во ккал больше лимита"
     
-    message = f"Вы должны есть {total_calories} ккал в день.\n\n"
+    message = f"Вы должны есть {total_calories} ккал в день.\nВы должны потреблять {int(int(weight) * 1.3)}г. белков в день.\nВы должны потреблять {int(int(weight) * 1.2)}г. жиров в день.\nВы должны потреблять {int(int(weight)*2)}г. углвеводов в день\n\n"
     message += f"Завтрак: {breakfast_example}\n"
     message += f"Обед: {lunch_example}\n"
     message += f"Ужин: {dinner_example}"
