@@ -18,9 +18,9 @@ def calculate_calories():
         messagebox.showerror("Error", "Неправильный ввод.")
         return
 
-    height = int(height)
-    weight = int(weight)
-    age = int(age)
+    height = float(height)
+    weight = float(weight)
+    age = float(age)
 
     # Calculate the Basal Metabolic Rate (BMR) using the Mifflin-St Jeor equation
     bmr = 10 * weight + 6.25 * height - 5 * age + 5
