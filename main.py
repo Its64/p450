@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 
 # Set up the color scheme
-BG_COLOR = '#FFF' # Soft white
+BG_COLOR = '#00FF00' # Soft white
 TEXT_COLOR = '#010101' # Soft black
 BUTTON_COLOR = '#FFF' # Soft green
 
@@ -94,16 +94,16 @@ root.resizable(True, True)
 root.title("Калькулятор")
 root.configure(bg=BG_COLOR)
 
-tk.Label(root, text="Рост (см):", bg=BG_COLOR, fg=TEXT_COLOR).pack()
-entry_height = tk.Entry(root, bg="black", fg="white")
+tk.Label(root, text="Рост (см):", bg='white', fg=TEXT_COLOR).pack()
+entry_height = tk.Entry(root)
 entry_height.pack()
 
-tk.Label(root, text="Вес (кг):", bg=BG_COLOR, fg=TEXT_COLOR).pack()
-entry_weight = tk.Entry(root, bg="black", fg="white")
+tk.Label(root, text="Вес (кг):", bg='blue', fg=TEXT_COLOR).pack()
+entry_weight = tk.Entry(root)
 entry_weight.pack()
 
-tk.Label(root, text="Возраст (лет):", bg=BG_COLOR, fg=TEXT_COLOR).pack()
-entry_age = tk.Entry(root, bg="black", fg="white")
+tk.Label(root, text="Возраст (лет):", bg='red', fg=TEXT_COLOR).pack()
+entry_age = tk.Entry(root)
 entry_age.pack()
 
 var_activity = tk.StringVar(root)
