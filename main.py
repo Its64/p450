@@ -1,6 +1,11 @@
 import tkinter as tk
 from tkinter import messagebox
 
+# Set up the color scheme
+BG_COLOR = '#FFF' # Soft white
+TEXT_COLOR = '#010101' # Soft black
+BUTTON_COLOR = '#FFF' # Soft green
+
 activity_level = {
     "Низкая активность": 1.2,
     "Небольшая активность": 1.375,
@@ -86,26 +91,28 @@ def calculate_calories():
 root = tk.Tk()
 root.geometry("800x600")
 root.resizable(True, True)
+root.title("Калькулятор")
+root.configure(bg=BG_COLOR)
 
-tk.Label(root, text="Рост (см):").pack()
-entry_height = tk.Entry(root)
+tk.Label(root, text="Рост (см):", bg=BG_COLOR, fg=TEXT_COLOR).pack()
+entry_height = tk.Entry(root, bg="black", fg="white")
 entry_height.pack()
 
-tk.Label(root, text="Вес (кг):").pack()
-entry_weight = tk.Entry(root)
+tk.Label(root, text="Вес (кг):", bg=BG_COLOR, fg=TEXT_COLOR).pack()
+entry_weight = tk.Entry(root, bg="black", fg="white")
 entry_weight.pack()
 
-tk.Label(root, text="Возраст (лет):").pack()
-entry_age = tk.Entry(root)
+tk.Label(root, text="Возраст (лет):", bg=BG_COLOR, fg=TEXT_COLOR).pack()
+entry_age = tk.Entry(root, bg="black", fg="white")
 entry_age.pack()
 
 var_activity = tk.StringVar(root)
 var_activity.set("Низкая активность")
 
-tk.Label(root, text="Уровень активности:").pack()
+tk.Label(root, text="Уровень активности:", bg=BG_COLOR, fg=TEXT_COLOR).pack()
 for text, mode in activity_level.items():
-    tk.Radiobutton(root, text=text, variable=var_activity, value=text).pack()
+    tk.Radiobutton(root, text=text, variable=var_activity, value=text, bg=BG_COLOR, fg=TEXT_COLOR).pack()
 
-tk.Button(root, text="Calculate", command=calculate_calories).pack()
+tk.Button(root, text="Calculate", command=calculate_calories, bg=BUTTON_COLOR, fg='#000').pack()
 
 root.mainloop()
