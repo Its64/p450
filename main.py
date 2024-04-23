@@ -115,4 +115,36 @@ for text, mode in activity_level.items():
 
 tk.Button(root, text="Calculate", command=calculate_calories, bg=BUTTON_COLOR, fg='#000').pack()
 
+welcome_window = tk.Toplevel(root)
+welcome_window.title("Приветствие")
+welcome_window.geometry("400x200")
+
+tk.Label(welcome_window, text="Имя: ", bg='white', fg=TEXT_COLOR).pack()
+name = tk.Entry(welcome_window)
+name.pack()
+
+def next():
+    welcome_win2()
+    welcome_window.destroy()
+
+close_button = tk.Button(welcome_window, text="ОК", command=next)
+close_button.pack()
+
+def welcome_win2():
+    welcome_window2 = tk.Toplevel(root)
+    welcome_window2.title("Приветствие")
+    welcome_window2.geometry("400x200")
+
+    about_label = tk.Label(welcome_window2, text="О программе")
+    about_label.pack(pady=10)
+
+    hello_label = tk.Label(welcome_window2, text="Привет,"+name.get())
+    hello_label.pack(pady=10)
+
+    description_label = tk.Label(welcome_window2, text="Описание сам пиши")
+    description_label.pack(pady=10)
+
+    close_button2 = tk.Button(welcome_window2, text="ОК", command=welcome_window2.destroy)
+    close_button2.pack()
+
 root.mainloop()
