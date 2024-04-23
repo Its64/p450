@@ -133,7 +133,7 @@ close_button.pack()
 def welcome_win2():
     welcome_window2 = tk.Toplevel(root)
     welcome_window2.title("Приветствие")
-    welcome_window2.geometry("400x200")
+    welcome_window2.geometry("500x500")
 
     about_label = tk.Label(welcome_window2, text="О программе")
     about_label.pack(pady=10)
